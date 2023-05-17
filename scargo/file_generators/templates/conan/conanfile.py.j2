@@ -23,12 +23,7 @@ class {{ config.project.name|capitalize|replace("-", "") }}Conan(ConanFile):  # 
         cmake.build()
 
     def source(self) -> None:
-        {% if config.project.target.family == "stm32" %}
-        git = tools.Git(folder="third-party/stm32-cmake")
-        git.clone("https://github.com/ObKo/stm32-cmake.git", "master")
-        {% else %}
         pass
-        {% endif %}
 
     {% if config.dependencies.build or config.dependencies.tool %}
     def build_requirements(self) -> None:

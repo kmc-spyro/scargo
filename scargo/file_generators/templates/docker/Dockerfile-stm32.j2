@@ -17,3 +17,5 @@ RUN curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash && \
     rm -rf /var/lib/apt/lists/*
 
 ENV LC_ALL=C
+
+RUN git clone --branch v2.1.0 https://github.com/ObKo/stm32-cmake.git
